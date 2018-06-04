@@ -1,6 +1,5 @@
 '''
 The structure of function must be isA(entity, concept)
-
 '''
 
 def isA(entity, concept):
