@@ -4,3 +4,6 @@
 #data files
 isa_pair_testset.tsv
 namuwiki_corpus.txt
+
+#trained model binary
+wiki.ko.bin
