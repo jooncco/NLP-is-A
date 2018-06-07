@@ -2,6 +2,7 @@ from fastText import load_model
 from sklearn.metrics.pairwise import cosine_similarity
 
 model = load_model("wiki.ko.bin")
+print('Loading Knowledge base ... this might take a while')
 brain = dict()
 with open('loco_kb_2.txt', 'r') as kb:
     for line in kb:
@@ -9,10 +10,9 @@ with open('loco_kb_2.txt', 'r') as kb:
         score = score.strip()
         if brain.get(entity) is not None:
             brain[entity].append(concept)
-            # print(brain[entity])
         else:
             brain[entity] = [concept]
-print('dictionary build done.')
+print('Done.')
 
 def isA(entity, concept):
     entity_vec = model.get_word_vector(entity)
@@ -21,7 +21,7 @@ def isA(entity, concept):
     for key in brain:
         if key == entity:
             if brain.get(entity) is not None:
-                return concept in brain[entity]
+                return (concept in brain[entity])
             else:
                 return False
         key_vec = model.get_word_vector(key)
@@ -36,6 +36,6 @@ def isA(entity, concept):
         return False
 
 if __name__ == "__main__":
-    entity = "드레"
+    entity = "드레스"
     concept = "의류"
     print(isA(entity, concept))

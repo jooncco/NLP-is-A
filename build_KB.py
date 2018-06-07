@@ -3,9 +3,6 @@ from sklearn.metrics.pairwise import cosine_similarity
 
 # globals
 model = load_model('wiki.ko.bin')
-# temp = model.get_word_vector('')
-# temp2 = model.get_word_vector('딸기')
-# print(cosine_similarity([temp], [temp2]))
 category = ['학교', '음식', '회사', '식물', '동물', '인물', '숫자', '음료', '색상', '국가', '도시', '의류', '프로그램', '사이트', '행성', '단체', '도구', '게임', '언어', '기계', '서적', '영화', '건축물']
 category_idx = dict()
 for i in range(0, len(category)):
