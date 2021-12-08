@@ -5,4 +5,3 @@ NLP for 한글(HAN-GEUL, Korean) words. To find out if a given (Entity, Concept)
 <b>Konlpy:</b>
 <b>fastText:</b>
 <b>sklearn:</b>
-// Will be updated
